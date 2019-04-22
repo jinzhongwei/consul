@@ -937,8 +937,7 @@ func (methods ACLAuthMethodListStubs) Sort() {
 }
 
 type ACLAuthMethod struct {
-	// Name is a unique identifier for this specific auth method. It is used
-	// when scoping Binding Rules.
+	// Name is a unique identifier for this specific auth method.
 	//
 	// Immutable once set and only settable during create.
 	Name string
@@ -951,8 +950,9 @@ type ACLAuthMethod struct {
 	// Description is just an optional bunch of explanatory text.
 	Description string
 
-	// Configuration is arbitrary configuration for the provider. This should
-	// only contain primitive values and containers (such as lists and maps).
+	// Configuration is arbitrary configuration for the auth method. This
+	// should only contain primitive values and containers (such as lists and
+	// maps).
 	Config map[string]interface{}
 
 	// Embedded Raft Metadata

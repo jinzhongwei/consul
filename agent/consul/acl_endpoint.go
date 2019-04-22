@@ -1781,7 +1781,7 @@ func (a *ACL) AuthMethodSet(args *structs.ACLAuthMethodSetRequest, reply *struct
 
 	// Instantiate a validator but do not cache it yet. This will validate the
 	// configuration.
-	if _, err := authmethod.Create(method); err != nil {
+	if _, err := authmethod.NewValidator(method); err != nil {
 		return fmt.Errorf("Invalid Auth Method: %v", err)
 	}
 

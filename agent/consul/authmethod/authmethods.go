@@ -64,9 +64,10 @@ func IsRegisteredType(typeName string) bool {
 	return ok
 }
 
-// Create instantiates a new Validator for the given auth method configuration.
-// If no auth method is registered with the provided type an error is returned.
-func Create(method *structs.ACLAuthMethod) (Validator, error) {
+// NewValidator instantiates a new Validator for the given auth method
+// configuration. If no auth method is registered with the provided type an
+// error is returned.
+func NewValidator(method *structs.ACLAuthMethod) (Validator, error) {
 	typesMu.RLock()
 	factory, ok := types[method.Type]
 	typesMu.RUnlock()

@@ -162,9 +162,9 @@ type ACLAuthMethod struct {
 	Type        string
 	Description string
 
-	// Configuration is arbitrary configuration for the provider. This
-	// should only contain primitive values and containers (such as lists
-	// and maps).
+	// Configuration is arbitrary configuration for the auth method. This
+	// should only contain primitive values and containers (such as lists and
+	// maps).
 	Config map[string]interface{}
 
 	CreateIndex uint64
